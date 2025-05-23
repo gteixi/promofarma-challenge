@@ -1,25 +1,35 @@
 'use client';
 
 import { useCart } from '@/context/CartContext';
-
+import styles from './Cart.module.css';
 import Image from 'next/image';
+import TotalSection from '../TotalSection/TotalSection';
 
 export default function Cart() {
-  const { cartItems } = useCart();
+  const { cartItems, totalPrice } = useCart();
 
   return (
-    <aside>
-      <h2>MI CESTA:</h2>
+    <aside className={styles['cart']}>
+      <h2 className={styles['cart__title']}>MI CESTA:</h2>
 
-      <ul>
+      <ul className={styles['cart__list']}>
         {cartItems.map((item) => (
-          <li key={item.id}>
-            <Image src={item.image} alt={item.name} content="" width={50} height={50} />
-            <span>{item.name}</span>
-            <span>{item.price.toFixed(2)} €</span>
+          <li key={item.id} className={styles['cart__item']}>
+            <Image
+              src={item.image}
+              alt={item.name}
+              className={styles['cart__image']}
+              width={50}
+              height={50}
+            />
+            <span className={styles['cart__name']}>{item.name}</span>
+            <span className={styles['cart__price']}>{item.price.toFixed(2)} €</span>
           </li>
         ))}
       </ul>
+      <div className={styles['total__container']}>
+        <TotalSection cartItems={cartItems} totalPrice={totalPrice} />
+      </div>
     </aside>
   );
 }

@@ -8,14 +8,14 @@ import MobileCartBar from '@/components/MobileCartBar/MobileCartBar';
 export default function HomePage() {
   return (
     <main className={styles.page}>
-      <h1>Promofarma Challenge</h1>
+      <h1 className={styles.page__title}>Promofarma Challenge</h1>
 
-      <div>
-        <section>
+      <div className={styles.page__content}>
+        <section className={styles.page__products}>
           <ProductList />
         </section>
 
-        <aside>
+        <aside className={styles.page__cart}>
           <Cart />
         </aside>
         <MobileCartBar />
