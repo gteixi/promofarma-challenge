@@ -1,0 +1,28 @@
+.mobile-cart-bar__summary {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.mobile-cart-bar__total-label {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #222;
+  letter-spacing: 0.5px;
+}
+
+.mobile-cart-bar__products {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #222;
+}
+
+.mobile-cart-bar__total {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: auto;
+}

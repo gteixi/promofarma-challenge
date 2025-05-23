@@ -3,9 +3,10 @@
 import { useCart } from '@/context/CartContext';
 import styles from './Cart.module.css';
 import Image from 'next/image';
+import TotalSection from '../TotalSection/TotalSection';
 
 export default function Cart() {
-  const { cartItems } = useCart();
+  const { cartItems, totalPrice } = useCart();
 
   return (
     <aside className={styles['cart']}>
@@ -26,6 +27,9 @@ export default function Cart() {
           </li>
         ))}
       </ul>
+      <div className={styles['total__container']}>
+        <TotalSection cartItems={cartItems} totalPrice={totalPrice} />
+      </div>
     </aside>
   );
 }

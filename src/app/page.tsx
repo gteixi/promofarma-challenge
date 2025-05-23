@@ -3,6 +3,7 @@
 import ProductList from '@/components/ProductList/ProductList';
 import Cart from '@/components/Cart/Cart';
 import styles from './page.module.css';
+import MobileCartBar from '@/components/MobileCartBar/MobileCartBar';
 
 export default function HomePage() {
   return (
@@ -17,6 +18,7 @@ export default function HomePage() {
         <aside className={styles.page__cart}>
           <Cart />
         </aside>
+        <MobileCartBar />
       </div>
     </main>
   );
