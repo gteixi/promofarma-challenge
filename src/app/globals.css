@@ -1,0 +1,11 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #222;
+  background: #f8f8f8;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --brand-green-color: #8cc63f;
+}
