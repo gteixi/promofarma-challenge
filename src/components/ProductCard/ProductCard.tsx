@@ -2,6 +2,7 @@
 
 import { Product } from '@/types/product';
 import { useCart } from '@/context/CartContext';
+import styles from './ProductCard.module.css';
 
 import Image from 'next/image';
 
@@ -14,11 +15,18 @@ export default function ProductCard({ product }: Props) {
   const isInCart = cartItems.some((item) => item.id === product.id);
 
   return (
-    <div>
-      <span>{product.name}</span>
-      <div>
-        <span>{product.price.toFixed(2)} €</span>
-        <button onClick={() => (isInCart ? removeFromCart(product.id) : addToCart(product))}>
+    <div className={styles['product-card']}>
+      <span className={styles['product-card__name']}>{product.name}</span>
+      <div className={styles['product-card__actions']}>
+        <span
+          className={`${styles['product-card__price']} ${isInCart ? styles['in-cart-price'] : ''}`}
+        >
+          {product.price.toFixed(2)} €
+        </span>
+        <button
+          className={`${styles['product-card__button']} ${isInCart ? styles['in-cart'] : ''}`}
+          onClick={() => (isInCart ? removeFromCart(product.id) : addToCart(product))}
+        >
           <Image
             src="/icons/add-to-cart.png"
             alt={isInCart ? 'Remove from cart' : 'Add to cart'}
