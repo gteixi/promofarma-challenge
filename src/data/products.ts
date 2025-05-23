@@ -21,7 +21,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'lajusticia',
-    name: 'Ana María Lajusticia Colágeno con Magnesio 350g',
+    name: 'LaJusticia Colágeno con Magnesio 350g',
     price: 15.2,
     image: '/images/products/lajusticia-colageno.jpg',
   },
