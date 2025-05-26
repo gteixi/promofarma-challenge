@@ -29,4 +29,4 @@ The app displays a list of static products and a shopping cart that updates in r
 - Rendering: **Server-Side Rendering (SSR)**
 - Fonts: **Open Sans** via Google Fonts
 - Bundler: **Vite** (experimental setup with Next.js)
-- Testing (optional): **Jest** + **React Testing Library**
+- Testing (optional): **Vitest** + **React Testing Library**
