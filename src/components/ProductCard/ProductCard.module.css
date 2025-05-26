@@ -59,14 +59,6 @@
   padding: 0;
 }
 
-.product-card__button.disabled,
-.product-card__button:disabled {
-  background-color: #e0e0e0 !important;
-  color: #bdbdbd !important;
-  opacity: 1;
-  cursor: not-allowed;
-}
-
 .product-card__button.in-cart {
   background-color: #d9534f !important;
   color: #fff !important;
