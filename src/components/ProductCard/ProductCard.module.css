@@ -67,3 +67,17 @@
 .in-cart-price {
   color: #bebebe;
 }
+
+@media (max-width: 768px) {
+  .product-card__name {
+    font-size: 1.1rem;
+    padding-right: 0.5rem;
+    white-space: normal; /* Allow wrapping */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    max-height: 2.7em; /* Adjust based on line-height */
+  }
+}

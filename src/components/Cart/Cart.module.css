@@ -33,6 +33,7 @@
   margin-bottom: 1.2rem;
   border-bottom: 1px solid #f2f2f2;
   padding-bottom: 1rem;
+  gap: 3px;
 }
 
 .cart__image {
@@ -56,6 +57,14 @@
   font-size: 1rem;
   margin-bottom: 0.2rem;
   width: 70%;
+  white-space: normal; /* Allow wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  max-height: 2.6em;
 }
 
 .cart__price {
