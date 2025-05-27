@@ -1,5 +1,5 @@
 import { screen } from '@testing-library/react';
-import ProductList from '../ProductList';
+import ProductList from './ProductList';
 import renderWithProviders from '@/__tests__/testUtils/renderWithProviders';
 import { mockProducts } from '@/__tests__/testUtils/mockProducts';
 

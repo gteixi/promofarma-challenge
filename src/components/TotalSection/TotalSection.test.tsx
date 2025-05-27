@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import TotalSection from '../TotalSection';
+import TotalSection from './TotalSection';
 import { mockProducts } from '@/__tests__/testUtils/mockProducts';
 
 describe('TotalSection', () => {

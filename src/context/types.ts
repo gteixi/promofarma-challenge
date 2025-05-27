@@ -1,8 +1,8 @@
 import { Product } from '@/types/product';
 
-export interface CartContextType {
+export type CartContextType = {
   cartItems: Product[];
+  totalPrice: number;
   addToCart: (product: Product) => void;
   removeFromCart: (id: string) => void;
-  totalPrice: number;
-}
+};

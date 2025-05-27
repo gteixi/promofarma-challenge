@@ -1,16 +1,16 @@
 'use client';
 
-import { useCart } from '@/context/CartContext';
-import styles from './Cart.module.css';
 import Image from 'next/image';
+import { useCart } from '@/context/hook';
 import TotalSection from '../TotalSection/TotalSection';
+import styles from './Cart.module.css';
 
 export default function Cart() {
   const { cartItems, totalPrice } = useCart();
 
   return (
-    <aside className={styles['cart']}>
-      <h2 className={styles['cart__title']}>MI CESTA:</h2>
+    <div className={styles['cart']}>
+      <h2 className={styles['cart__title']}>Mi Cesta:</h2>
 
       <ul className={styles['cart__list']}>
         {cartItems.map((item) => (
@@ -30,6 +30,6 @@ export default function Cart() {
       <div className={styles['total__container']}>
         <TotalSection cartItems={cartItems} totalPrice={totalPrice} />
       </div>
-    </aside>
+    </div>
   );
 }

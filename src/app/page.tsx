@@ -1,9 +1,7 @@
-'use client';
-
 import ProductList from '@/components/ProductList/ProductList';
 import Cart from '@/components/Cart/Cart';
-import styles from './page.module.css';
 import MobileCartBar from '@/components/MobileCartBar/MobileCartBar';
+import styles from './page.module.css';
 
 export default function HomePage() {
   return (

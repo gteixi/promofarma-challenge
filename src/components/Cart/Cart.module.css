@@ -11,10 +11,11 @@
 .cart__title {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--brand-green-color);
+  color: var(--brand-color);
   border-bottom: 2px solid #d6e9c6;
   padding-bottom: 0.5rem;
   margin-bottom: 1.2rem;
+  text-transform: uppercase;
 }
 
 .cart__empty {
