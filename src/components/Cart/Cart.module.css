@@ -1,5 +1,8 @@
 .cart {
   background: #fff;
+  padding: 1rem;
+  margin: 0;
+  border-radius: 0;
 }
 
 .cart__title {
@@ -29,7 +32,10 @@
 /* --- DESKTOP STYLES --- */
 @media (width >= 1024px) {
   .cart {
-    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: #b0b0b0 0px 0px 8px;
+    width: 500px;
   }
   .cart__list {
     display: block;
@@ -45,17 +51,5 @@
     border-bottom: 1px solid #f2f2f2;
     padding-bottom: 1rem;
     gap: 3px;
-  }
-
-  .cart__image {
-    display: block;
-    width: 80px;
-    height: 80px;
-    margin-right: 1rem;
-    border-radius: 6px;
-    background: #f8f8f8;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #e2e2e2;
   }
 }
