@@ -3,7 +3,6 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  font-family: 'Open Sans', Arial, sans-serif;
 }
 
 .product-card__image {
@@ -46,7 +45,7 @@
   width: 75px;
   min-width: 48px;
   min-height: 48px;
-  background-color: var(--brand-green-color, #97c40f);
+  background-color: var(--brand-color);
   border: none;
   border-radius: 6px;
   cursor: pointer;

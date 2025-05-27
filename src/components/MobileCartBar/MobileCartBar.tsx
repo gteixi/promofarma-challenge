@@ -1,9 +1,9 @@
 'use client';
 
-import { useCart } from '@/context/CartContext';
+import { useCart } from '@/context/hook';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
-import styles from './MobileCartBar.module.css';
 import TotalSection from '../TotalSection/TotalSection';
+import styles from './MobileCartBar.module.css';
 
 export default function MobileCartBar() {
   const { cartItems, totalPrice } = useCart();
@@ -14,7 +14,7 @@ export default function MobileCartBar() {
   return (
     <footer className={styles['mobile-cart-bar']}>
       <div className={styles['mobile-cart-bar__row']}>
-        <span className={styles['mobile-cart-bar__label']}>MI CESTA:</span>
+        <span className={styles['mobile-cart-bar__label']}>Mi cesta:</span>
       </div>
       <div className={styles['mobile-cart-bar__divider']} />
       <div className={styles['mobile-cart-bar__row']}>

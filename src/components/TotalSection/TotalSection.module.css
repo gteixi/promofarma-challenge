@@ -9,6 +9,7 @@
   font-weight: 800;
   color: #222;
   letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .mobile-cart-bar__products {

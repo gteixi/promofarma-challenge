@@ -1,10 +1,9 @@
 'use client';
 
-import { Product } from '@/types/product';
-import { useCart } from '@/context/CartContext';
-import styles from './ProductCard.module.css';
-
 import Image from 'next/image';
+import { useCart } from '@/context/hook';
+import { Product } from '@/types/product';
+import styles from './ProductCard.module.css';
 
 type Props = {
   product: Product;
@@ -16,7 +15,7 @@ export default function ProductCard({ product }: Props) {
 
   return (
     <div className={styles['product-card']}>
-      <span className={styles['product-card__name']}>{product.name}</span>
+      <h2 className={styles['product-card__name']}>{product.name}</h2>
       <div className={styles['product-card__actions']}>
         <span
           className={`${styles['product-card__price']} ${isInCart ? styles['in-cart-price'] : ''}`}

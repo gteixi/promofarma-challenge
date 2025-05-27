@@ -12,7 +12,7 @@ export default function TotalSection({ cartItems, totalPrice }: TotalSectionProp
   return (
     <>
       <span className={styles['mobile-cart-bar__summary']}>
-        <span className={styles['mobile-cart-bar__total-label']}>TOTAL</span>
+        <span className={styles['mobile-cart-bar__total-label']}>Total</span>
         <span className={styles['mobile-cart-bar__products']}>({cartItems.length} productos)</span>
       </span>
       <span className={styles['mobile-cart-bar__total']}>{totalPrice.toFixed(2)} €</span>

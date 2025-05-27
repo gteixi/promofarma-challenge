@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
-import MobileCartBar from '../MobileCartBar';
 import { vi } from 'vitest';
+import MobileCartBar from './MobileCartBar';
 import renderWithProviders from '@/__tests__/testUtils/renderWithProviders';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
