@@ -22,9 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body>
-        <CartProvider>
-          <main>{children}</main>
-        </CartProvider>
+        <CartProvider>{children}</CartProvider>
       </body>
     </html>
   );
