@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useCart } from '@/context/hook';
 import TotalSection from '../TotalSection/TotalSection';
 import styles from './Cart.module.css';
@@ -16,14 +15,7 @@ export default function Cart() {
       <ul className={styles['cart__list']}>
         {cartItems.map((item) => (
           <li key={item.id} className={styles['cart__item']}>
-            <Image
-              src={item.image}
-              alt={item.name}
-              className={styles['cart__image']}
-              width={50}
-              height={50}
-            />
-            <ProductCard product={item} inCart />
+            <ProductCard product={item} showInCart />
           </li>
         ))}
       </ul>

@@ -17,8 +17,6 @@
   right: 0;
   bottom: 0;
   z-index: 100;
-  background: #fff;
-  padding: 0.5rem 1rem;
 }
 
 /* --- DESKTOP STYLES --- */
@@ -26,8 +24,9 @@
   .page__content {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: flex-start;
+    padding: 2rem 0 2rem 0;
+    gap: 5rem;
+    justify-content: center;
   }
   .page__cart {
     position: static;
