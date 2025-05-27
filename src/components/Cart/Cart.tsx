@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useCart } from '@/context/hook';
 import TotalSection from '../TotalSection/TotalSection';
 import styles from './Cart.module.css';
+import ProductCard from '../ProductCard/ProductCard';
 
 export default function Cart() {
   const { cartItems, totalPrice } = useCart();
@@ -22,8 +23,7 @@ export default function Cart() {
               width={50}
               height={50}
             />
-            <span className={styles['cart__name']}>{item.name}</span>
-            <span className={styles['cart__price']}>{item.price.toFixed(2)} €</span>
+            <ProductCard product={item} inCart />
           </li>
         ))}
       </ul>

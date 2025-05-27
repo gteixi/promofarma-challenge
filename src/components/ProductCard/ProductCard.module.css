@@ -19,6 +19,18 @@
   color: #222;
 }
 
+.product-card__name.in-cart {
+  font-size: 1.1rem;
+  padding-right: 0.5rem;
+  white-space: normal; /* Allow wrapping */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  max-height: 2.7em; /* Adjust based on line-height */
+}
+
 .product-card__actions {
   display: flex;
   flex-direction: row;

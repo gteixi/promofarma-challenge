@@ -28,5 +28,5 @@ The app displays a list of static products and a shopping cart that updates in r
 - State Management: **React useState/useContext**
 - Rendering: **Server-Side Rendering (SSR)**
 - Fonts: **Open Sans** via Google Fonts
-- Bundler: **Vite**
+- Bundler: **Turbopack**
 - Testing (optional): **Vitest** + **React Testing Library**
