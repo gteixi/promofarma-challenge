@@ -4,7 +4,7 @@ import styles from './ProductList.module.css';
 
 export default function ProductList() {
   return (
-    <section className={styles['product-list']}>
+    <section className={styles['product-list']} aria-label="Product list">
       {PRODUCTS.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
