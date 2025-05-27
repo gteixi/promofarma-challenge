@@ -11,11 +11,11 @@ type TotalSectionProps = {
 export default function TotalSection({ cartItems, totalPrice }: TotalSectionProps) {
   return (
     <>
-      <span className={styles['mobile-cart-bar__summary']}>
-        <span className={styles['mobile-cart-bar__total-label']}>Total</span>
-        <span className={styles['mobile-cart-bar__products']}>({cartItems.length} productos)</span>
+      <span className={styles['total-section__summary']}>
+        <span className={styles['total-section__total-label']}>Total</span>
+        <span className={styles['total-section__products']}>({cartItems.length} productos)</span>
       </span>
-      <span className={styles['mobile-cart-bar__total']}>{totalPrice.toFixed(2)} €</span>
+      <span className={styles['total-section__total']}>{totalPrice.toFixed(2)} €</span>
     </>
   );
 }

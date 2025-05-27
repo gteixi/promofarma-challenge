@@ -1,11 +1,5 @@
 .cart {
   background: #fff;
-  border: 1px solid #e2e2e2;
-  border-radius: 12px;
-  padding: 2rem 2rem 1.5rem 2rem;
-  min-width: 350px;
-  max-width: 400px;
-  margin-left: 2rem;
 }
 
 .cart__title {
@@ -18,77 +12,12 @@
   text-transform: uppercase;
 }
 
-.cart__empty {
-  color: #777;
+.cart__image {
+  display: none;
 }
 
 .cart__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.cart__item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.2rem;
-  border-bottom: 1px solid #f2f2f2;
-  padding-bottom: 1rem;
-  gap: 3px;
-}
-
-.cart__image {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  margin-right: 1rem;
-  border-radius: 6px;
-  background: #f8f8f8;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #e2e2e2;
-}
-
-.cart__details {
-  flex-grow: 1;
-}
-
-.cart__name {
-  font-weight: 500;
-  font-size: 1rem;
-  margin-bottom: 0.2rem;
-  width: 70%;
-  white-space: normal; /* Allow wrapping */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* Limit to 2 lines */
-  -webkit-box-orient: vertical;
-  line-clamp: 2;
-  max-height: 2.6em;
-}
-
-.cart__price {
-  display: flex;
-  color: #222;
-  font-size: 1.3rem;
-  font-weight: 600;
-  width: 30%;
-}
-
-.cart__remove {
-  background: none;
-  border: none;
-  color: #d9534f;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-.cart__total {
-  margin-top: 1.5rem;
-  font-weight: 700;
-  font-size: 1.2rem;
-  text-align: right;
+  display: none;
 }
 
 .total__container {
@@ -97,8 +26,36 @@
   align-items: center;
 }
 
-@media (max-width: 768px) {
+/* --- DESKTOP STYLES --- */
+@media (width >= 1024px) {
   .cart {
-    display: none; /* Hide desktop cart on mobile */
+    padding: 1.5rem;
+  }
+  .cart__list {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .cart__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 1rem;
+    gap: 3px;
+  }
+
+  .cart__image {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin-right: 1rem;
+    border-radius: 6px;
+    background: #f8f8f8;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e2e2e2;
   }
 }
