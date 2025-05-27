@@ -53,7 +53,7 @@ export default function ProductCard({ product, showInCart }: Props) {
           >
             <Image
               src="/icons/add-to-cart.png"
-              alt=""
+              alt={isInCart ? 'Remove from cart' : 'Add to cart'}
               width={42}
               height={25}
               style={isInCart ? { transform: 'rotate(45deg)' } : {}}

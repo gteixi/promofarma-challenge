@@ -1,17 +1,19 @@
 import { render, screen } from '@testing-library/react';
 import TotalSection from './TotalSection';
-import { mockProducts } from '@/__tests__/testUtils/mockProducts';
+import { describe, it, expect } from 'vitest';
+import { mockCartItems } from '@/test/__testUtils__/mockCartItems';
 
-describe('TotalSection', () => {
-  const totalPrice = mockProducts.reduce((sum, p) => sum + p.price, 0);
+describe('[TotalSection Component]', () => {
+  it('renders product counter text and total', () => {
+    render(<TotalSection cartItems={mockCartItems} totalPrice={25} />);
 
-  it('renders the correct number of products', () => {
-    render(<TotalSection cartItems={mockProducts} totalPrice={totalPrice} />);
-    expect(screen.getByText(`(${mockProducts.length} productos)`)).toBeInTheDocument();
-  });
+    const summary = screen.getByLabelText('Total: 25.00 euros for 2 products');
+    expect(summary).toBeInTheDocument();
 
-  it('displays the correct total price with € and two decimals', () => {
-    render(<TotalSection cartItems={mockProducts} totalPrice={totalPrice} />);
-    expect(screen.getByText(`${totalPrice.toFixed(2)} €`)).toBeInTheDocument();
+    const total = screen.getByLabelText('25.00 euros');
+    expect(total).toBeInTheDocument();
+
+    expect(screen.getByText('(2 productos)')).toBeInTheDocument();
+    expect(screen.getByText('25.00 €')).toBeInTheDocument();
   });
 });
