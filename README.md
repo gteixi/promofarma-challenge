@@ -6,6 +6,12 @@ This is a technical test implementation for Promofarma. It consists of a respons
 
 The app displays a list of static products and a shopping cart that updates in real time. When a product is added to the cart, it becomes disabled in the product list and the cart updates the total price and item count. Users can remove products from the cart at any time.
 
+## 🖼️ Screenshots (Desktop & Mobile)
+
+[!Desktop Screenshot](public/images/screenshots/desktop-screenshot.png)
+
+[!Mobile Screenshot](public/images/screenshots/mobile-screenshot.png)
+
 ## 📱 Features
 
 - Static product listing (no API required)
