@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import ProductCard from './ProductCard';
-import { vi, describe, it, expect } from 'vitest';
+import { vi, describe, it, expect, beforeEach } from 'vitest';
 import { useCart } from '@/context/hook';
 import { CartProvider } from '@/context/Provider';
 import { mockCartItems } from '@/test/__testUtils__/mockCartItems';
@@ -10,54 +10,51 @@ vi.mock('@/context/hook', () => ({
   useCart: vi.fn(),
 }));
 
-// Utility: reset cart mock state
-const setupUseCart = (isInCart = false) => {
-  const cartItems = isInCart ? [mockCartItems[0]] : [];
+const mockAddToCart = vi.fn();
+const mockRemoveFromCart = vi.fn();
 
-  (useCart as unknown as vi.Mock).mockReturnValue({
-    cartItems,
-    addToCart: vi.fn(),
-    removeFromCart: vi.fn(),
-  });
-};
+const renderComponent = () =>
+  render(
+    <CartProvider>
+      <ProductCard product={mockCartItems[0]} />
+    </CartProvider>
+  );
 
 describe('[ProductCard Component]', () => {
-  it('shows "Add to cart" button when product is not in cart', () => {
-    setupUseCart(false);
+  describe('when product is NOT in cart', () => {
+    beforeEach(() => {
+      (useCart as unknown as vi.Mock).mockReturnValue({
+        cartItems: [],
+        addToCart: mockAddToCart,
+        removeFromCart: mockRemoveFromCart,
+      });
+      renderComponent();
+    });
 
-    render(
-      <CartProvider>
-        <ProductCard product={mockCartItems[0]} />
-      </CartProvider>
-    );
+    it('shows "Add to cart" button', () => {
+      const button = screen.getByRole('button', { name: /add item 1 to cart/i });
+      expect(button).toBeInTheDocument();
+    });
 
-    const button = screen.getByRole('button', { name: /add item 1 to cart/i });
-    expect(button).toBeInTheDocument();
+    it('renders correct price with aria-label', () => {
+      const price = screen.getByLabelText(/price: 10.00 euros/i);
+      expect(price).toBeInTheDocument();
+    });
   });
 
-  it('shows "Remove from cart" button when product is in cart', () => {
-    setupUseCart(true);
+  describe('when product IS in cart', () => {
+    beforeEach(() => {
+      (useCart as unknown as vi.Mock).mockReturnValue({
+        cartItems: [mockCartItems[0]],
+        addToCart: mockAddToCart,
+        removeFromCart: mockRemoveFromCart,
+      });
+      renderComponent();
+    });
 
-    render(
-      <CartProvider>
-        <ProductCard product={mockCartItems[0]} />
-      </CartProvider>
-    );
-
-    const button = screen.getByRole('button', { name: /remove item 1 from cart/i });
-    expect(button).toBeInTheDocument();
-  });
-
-  it('renders correct price with aria-label', () => {
-    setupUseCart(false);
-
-    render(
-      <CartProvider>
-        <ProductCard product={mockCartItems[0]} />
-      </CartProvider>
-    );
-
-    const price = screen.getByLabelText(/price: 10.00 euros/i);
-    expect(price).toBeInTheDocument();
+    it('shows "Remove from cart" button', () => {
+      const button = screen.getByRole('button', { name: /remove item 1 from cart/i });
+      expect(button).toBeInTheDocument();
+    });
   });
 });

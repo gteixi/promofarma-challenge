@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import ProductList from './ProductList';
 import { CartProvider } from '@/context/Provider';
 
@@ -11,24 +11,20 @@ vi.mock('@/data/products', () => ({
 }));
 
 describe('[ProductList Component]', () => {
-  it('renders a section with aria-label', () => {
+  beforeEach(() => {
     render(
       <CartProvider>
         <ProductList />
       </CartProvider>
     );
+  });
 
+  it('renders a section with aria-label', () => {
     const section = screen.getByLabelText(/product list/i);
     expect(section).toBeInTheDocument();
   });
 
   it('renders all products in the list', () => {
-    render(
-      <CartProvider>
-        <ProductList />
-      </CartProvider>
-    );
-
     expect(screen.getByText('Item 1')).toBeInTheDocument();
     expect(screen.getByText('Item 2')).toBeInTheDocument();
   });
