@@ -8,9 +8,10 @@ The app displays a list of static products and a shopping cart that updates in r
 
 ## 🖼️ Screenshots (Desktop & Mobile)
 
-[!Desktop Screenshot](public/images/screenshots/desktop-screenshot.png)
-
-[!Mobile Screenshot](public/images/screenshots/mobile-screenshot.png)
+<p align="center" style="display: flex; justify-content: center; flex-wrap: wrap;">
+  <img src="public/images/screenshots/desktop-screenshot.png" alt="Desktop design screenshot" width="780" style="border: 1px solid #ccc; border-radius: 8px;" />
+  <img src="public/images/screenshots/mobile-screenshot.png" alt="Mobile design screenshot" width="200" style="border: 1px solid #ccc; border-radius: 8px;" />
+</p>
 
 ## 📱 Features
 
