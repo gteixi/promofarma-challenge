@@ -83,6 +83,10 @@
   color: #fff !important;
 }
 
+.in-cart-price {
+  color: #888;
+}
+
 @media (width >= 1024px) {
   .product-card__name {
     font-size: 1.1rem;
